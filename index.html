@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarama - A new language of care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        'sarama-red': '#E84C3D',
+                        'sarama-beige': '#F5F5F0',
+                        'sarama-gray': '#ABABAB',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #F5F5F0;
+        }
+    </style>
+</head>
+<body class="font-serif bg-sarama-beige">
+    <!-- Header/Navigation -->
+    <header class="p-4 flex justify-between items-center">
+        <div class="text-xl font-semibold">Sarama</div>
+        <nav class="hidden md:block">
+            <!-- Navigation items would go here -->
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen">
+        <!-- Background image placeholder -->
+        <div class="absolute inset-0 placeholder">
+            <!-- Placeholder for hero image (dog in field of flowers) -->
+            <div class="absolute inset-0 bg-cover bg-center hero-overlay"></div>
+        </div>
+
+        <!-- Hero content -->
+        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center p-4 hero-content">
+            <h1 class="text-4xl md:text-6xl font-serif mb-12 text-white">A new language of care.</h1>
+            
+            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 mt-8">
+                <a href="#" class="btn-primary text-white rounded-full px-8 py-4 font-serif">Join the waitlist</a>
+                <a href="#" class="btn-secondary text-white rounded-full px-8 py-4 font-serif">Learn more about Sarama</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main content section -->
+    <section class="py-16 px-4 md:px-12 lg:px-24">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-xl md:text-2xl mb-8">
+                Most dog tech tells you where your dog is.<br>
+                Sarama helps you feel how they are.
+            </p>
+
+            <p class="text-base md:text-lg text-gray-600 mb-12">
+                We'll tell you if they're stressed,<br>
+                bored, in pain, or just fine.<br>
+                We'll tell you when they need your care and<br>
+                what they're trying to tell you.
+            </p>
+
+            <p class="text-xl md:text-2xl mb-8">
+                Sarama exists for the moments<br>
+                numbers can't explain.
+            </p>
+        </div>
+    </section>
+
+    <!-- Feature section with image (full width) -->
+    <section class="py-16 mb-16">
+        <!-- Full width image container -->
+        <div class="w-full relative mb-0 full-width-image" style="background-image: url('/assets/image/woman_with_black_dog.png'); background-size: cover; background-position: center; height: 75vh; max-height: 800px;">
+            <!-- Overlay with content -->
+            <div class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-8 md:p-10 max-w-md m-4 md:m-8 rounded-lg shadow-md content-overlay">
+                <h2 class="text-2xl md:text-3xl font-serif mb-4">A quiet system for deeper care.</h2>
+                <p class="text-gray-600 mb-6">
+                    Know when your dog needs you most.<br>
+                    Sarama translates your dog's physical signals<br>
+                    into an accessible, simple and secure<br>
+                    language you can truly rely on.
+                </p>
+                <a href="#" class="btn-primary text-white rounded-full px-6 py-3 inline-block w-max font-serif">Learn more</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join section -->
+    <section class="py-16 px-4 md:px-12 lg:px-24 text-center max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-serif mb-8">Join the dogs and humans shaping a new language of care.</h2>
+        <p class="text-gray-600 mb-8">
+            Our three-year-old research team is building something that matters.<br>
+            Join us as we explore the deep bond between humans and dogs, right when it's needed most.
+        </p>
+        <a href="#" class="bg-black text-white rounded-full px-6 py-3 inline-block font-serif hover:bg-gray-800 transition-colors">Apply for early access</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 border-t border-gray-200">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <div class="text-xl font-semibold mb-2">Sarama</div>
+                <div class="text-sm text-gray-500">© 2023</div>
+            </div>
+            <div class="flex space-x-6 text-sm">
+                <a href="#" class="text-gray-500 hover:text-gray-700">Terms</a>
+                <a href="#" class="text-gray-500 hover:text-gray-700">Contact us</a>
+                <a href="#" class="text-gray-500 hover:text-gray-700">Privacy policy</a>
+            </div>
+            <div class="mt-4 md:mt-0 text-sm text-gray-500">
+                All Rights Reserved
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

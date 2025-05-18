@@ -1,0 +1,75 @@
+/* Additional custom styles */
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+    background-color: #E84C3D;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #D43C2D;
+}
+
+.btn-secondary {
+    border: 1px solid white;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Full-width feature section styling */
+.feature-overlay {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Placeholder styling */
+.placeholder {
+    position: relative;
+    overflow: hidden;
+    background-color: #E5E5E5;
+}
+
+.placeholder::after {
+    content: "Image Placeholder";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999;
+    font-size: 14px;
+}
+
+/* Full-width image section */
+.full-width-image {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #E5E5E5;
+    /* Aspect ratio based on image dimensions 2464 × 1856 */
+    aspect-ratio: 2464 / 1856;
+    background-position: center;
+}
+
+/* Content card overlay */
+.content-overlay {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.content-overlay:hover {
+    transform: translateY(-5px) translateX(-5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
