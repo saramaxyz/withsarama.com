@@ -4763,7 +4763,7 @@
                             0.1899999976158142
                         ],
                         "transitionDuration": 0.10000000149011612,
-                        "delay": 3.0
+                        "delay": 0.5
                     },
                     "enterState": {
                         "transform": {
@@ -8753,7 +8753,7 @@
                             0.1899999976158142
                         ],
                         "transitionDuration": 0.10000000149011612,
-                        "delay": 3.0
+                        "delay": 0.5
                     },
                     "enterState": {
                         "transform": {
@@ -11803,7 +11803,7 @@
                             0.1899999976158142
                         ],
                         "transitionDuration": 0.6000000238418579,
-                        "delay": 6.0
+                        "delay": 0.75
                     },
                     "enterState": {
                         "transform": {
@@ -12500,7 +12500,7 @@
                             0.1899999976158142
                         ],
                         "transitionDuration": 0.10000000149011612,
-                        "delay": 3.0
+                        "delay": 0.5
                     },
                     "enterState": {
                         "transform": {
@@ -12655,7 +12655,7 @@
                             0.1899999976158142
                         ],
                         "transitionDuration": 0.6000000238418579,
-                        "delay": 1.0
+                        "delay": 0.25
                     },
                     "enterState": {
                         "transform": {
@@ -19234,7 +19234,7 @@
                             0.1899999976158142
                         ],
                         "transitionDuration": 0.6000000238418579,
-                        "delay": 6.0
+                        "delay": 0.75
                     },
                     "enterState": {
                         "transform": {
@@ -19539,7 +19539,7 @@
                             0.1899999976158142
                         ],
                         "transitionDuration": 0.10000000149011612,
-                        "delay": 3.0
+                        "delay": 0.5
                     },
                     "enterState": {
                         "transform": {
@@ -19897,7 +19897,7 @@
                             0.1899999976158142
                         ],
                         "transitionDuration": 0.6000000238418579,
-                        "delay": 1.0
+                        "delay": 0.25
                     },
                     "enterState": {
                         "transform": {
@@ -24152,7 +24152,7 @@
                             0.1899999976158142
                         ],
                         "transitionDuration": 0.10000000149011612,
-                        "delay": 3.0
+                        "delay": 0.5
                     },
                     "enterState": {
                         "transform": {
@@ -26497,7 +26497,7 @@
                             0.1899999976158142
                         ],
                         "transitionDuration": 0.10000000149011612,
-                        "delay": 3.0
+                        "delay": 0.5
                     },
                     "enterState": {
                         "transform": {
@@ -29289,7 +29289,7 @@
                             0.1899999976158142
                         ],
                         "transitionDuration": 0.6000000238418579,
-                        "delay": 1.0
+                        "delay": 0.25
                     },
                     "enterState": {
                         "transform": {
@@ -30734,7 +30734,7 @@
                             0.1899999976158142
                         ],
                         "transitionDuration": 0.6000000238418579,
-                        "delay": 1.0
+                        "delay": 0.25
                     },
                     "enterState": {
                         "transform": {
@@ -30887,7 +30887,7 @@
                             0.1899999976158142
                         ],
                         "transitionDuration": 0.6000000238418579,
-                        "delay": 1.0
+                        "delay": 0.25
                     },
                     "enterState": {
                         "transform": {
@@ -31344,7 +31344,7 @@
                             0.1899999976158142
                         ],
                         "transitionDuration": 0.6000000238418579,
-                        "delay": 1.0
+                        "delay": 0.25
                     },
                     "enterState": {
                         "transform": {
@@ -33376,7 +33376,7 @@
                             0.1899999976158142
                         ],
                         "transitionDuration": 0.10000000149011612,
-                        "delay": 3.0
+                        "delay": 0.5
                     },
                     "enterState": {
                         "transform": {
