@@ -1,3 +1,6 @@
 node_modules/
 package*json
 optimization_scripts/
+.DS_Store
+.plandex-v2/
+.claude/
