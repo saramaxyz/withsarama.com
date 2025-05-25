@@ -416,14 +416,14 @@ position: absolute;
 }
 #container .css-6gkcj1 {
 transform-origin: top left;
---max-layout-width: 2048px;
+--max-layout-width: 100vw;
 --min-layout-width: 320px;
 --max-font-size: 288px;
 --min-font-size: 6px;
 --viewport-width-scaled: calc(var(--100dvw) / var(--viewport-scale));
 --viewport-height-scaled: calc(var(--100dvh) / var(--viewport-scale));
 --content-width-scaled: calc(var(--content-width-unscaled) / var(--viewport-scale));
---content-margin-x-scaled: max(calc((var(--viewport-width) - var(--max-layout-width)) / var(--viewport-scale) / 2), 0px);
+--content-margin-x-scaled: 0px;
 }
 #container .css-ll733z {
 position: relative;
@@ -433,9 +433,9 @@ min-width: var(--content-min-width);
 width: 100%;
 }
 #container .css-x0o3s8 {
---content-width: calc(var(--content-width-scaled, 100%) -(var(--content-margin-x-scaled, 0px) * 2));
---content-margin: 0 var(--content-margin-x-scaled, 0);
---content-min-width: calc(var(--viewport-width-scaled, 100%) -(var(--content-margin-x-scaled, 0px) * 2));
+--content-width: 100%;
+--content-margin: 0;
+--content-min-width: 100%;
 --content-min-height: var(--viewport-height-scaled, var(--100dvh));
 background-color: #F0EEE7;
 }
@@ -457,7 +457,7 @@ flex-direction: column;
 justify-content: flex-start;
 align-items: center;
 position: relative;
-margin: var(--content-margin);
+margin: 0;
 padding: 10px 10px 20px;
 }
 #container .css-ndsgy9 {
@@ -465,9 +465,9 @@ align-content: stretch;
 overflow: clip;
 }
 #container .css-v4sv0p {
-width: var(--content-width);
+width: 100%;
 height: 100%;
-min-width: var(--content-min-width);
+min-width: 100%;
 min-height: var(--content-min-height);
 }
 #container .css-op4k87 {
@@ -577,7 +577,7 @@ flex-direction: column;
 justify-content: center;
 }
 #container .css-qorwbp {
-white-space: nowrap;
+ nowrap;
 font-family: "DM Sans:Regular", sans-serif;
 word-break: break-word;
 font-weight: 400;
@@ -586,6 +586,58 @@ letter-spacing: -0.28px;
 text-align: left;
 line-height: 0;
 }
+#container .css-3gmj9o,
+#container .css-v4sv0p {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Scroll-triggered fade-in animations */
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth animation timing for individual elements */
+
+/* Specific animations for different section types */
+.fade-in-on-scroll.slide-up {
+    transform: translateY(50px);
+}
+
+.fade-in-on-scroll.slide-up.visible {
+    transform: translateY(0);
+}
+
+.fade-in-on-scroll.fade-only {
+    transform: none;
+}
+
+.fade-in-on-scroll.fade-only.visible {
+    transform: none;
+}
+
+/* Override any existing inline opacity/transform styles for animated elements */
+.fade-in-on-scroll {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+}
+
+.fade-in-on-scroll.slide-up {
+    transform: translateY(50px) !important;
+}
+
+.fade-in-on-scroll.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
 #container .css-xipszf {
 font-variation-settings: "opsz" 14;
 color: #FFF;
@@ -597,7 +649,7 @@ color: #FFF;
 display: block;
 }
 #container .css-evv0vy {
-white-space: pre;
+ pre;
 line-height: 1.4;
 }
 #container .css-e3ep6k {
@@ -654,11 +706,10 @@ color: rgba(255, 255, 255, 0.85);
 --letter-spacing: -1.05px;
 }
 #container .css-19u6f {
-white-space: pre-wrap;
 line-height: 0.85;
 }
 #container .css-ym44mn {
-max-width: 1600px;
+max-width: 100%;
 width: 100%;
 }
 #container .css-5knerd {
@@ -744,7 +795,7 @@ color: #2F292A;
 --letter-spacing: -1.12px;
 }
 #container .css-ydwdby {
-white-space: pre-wrap;
+ pre-wrap;
 line-height: 1.1;
 }
 #container .css-1yoex6 {
@@ -764,7 +815,7 @@ color: #464D47;
 --letter-spacing: -0.075px;
 }
 #container .css-ydwfk1 {
-white-space: pre-wrap;
+ pre-wrap;
 line-height: 1.4;
 }
 #container .css-msv2x0 {
@@ -783,7 +834,7 @@ text-align: left;
 line-height: 0;
 }
 #container .css-4hzbpn {
-white-space: pre-wrap;
+ pre-wrap;
 }
 #container .css-5ykw7d {
 font-size: 28px;
@@ -940,7 +991,7 @@ border-radius: inherit;
 padding: 0;
 }
 #container .css-qddawj {
-white-space: nowrap;
+ nowrap;
 font-family: "DM Sans:Regular", sans-serif;
 word-break: break-word;
 font-weight: 400;
@@ -1015,7 +1066,7 @@ border-radius: inherit;
 padding: 0;
 }
 #container .css-ixxibn {
-white-space: nowrap;
+ nowrap;
 font-family: "DM Sans:Regular", sans-serif;
 word-break: break-word;
 font-weight: 400;
@@ -1178,7 +1229,7 @@ top: 50%;
 bottom: auto;
 }
 #container .css-ig8i86 {
-white-space: nowrap;
+ nowrap;
 font-family: "DM Sans:Regular", sans-serif;
 word-break: break-word;
 text-align: left;
@@ -1220,7 +1271,7 @@ color: rgba(255, 255, 255, 0.75);
 --letter-spacing: -1.5px;
 }
 #container .css-ydcpxg {
-white-space: pre-wrap;
+ pre-wrap;
 line-height: 0.8;
 }
 #container .css-ne9ye8 {
@@ -1365,7 +1416,7 @@ text-align: right;
 line-height: 0;
 }
 #container .css-ufxkxv {
-max-width: 1600px;
+max-width: 100%;
 height: 500px;
 width: 100%;
 }
@@ -1445,7 +1496,7 @@ right: 0;
 bottom: -0.0009016638472331751%;
 }
 #container .css-8rdi4u {
-white-space: nowrap;
+ nowrap;
 font-family: "DM Sans:Regular", sans-serif;
 word-break: break-word;
 font-weight: 400;
@@ -1482,7 +1533,7 @@ padding: 0;
 width: 720px;
 }
 #container .css-jjqvhg {
-max-width: 1500px;
+max-width: 100%;
 height: 148px;
 width: 100%;
 }
@@ -1555,7 +1606,7 @@ width: 100%;
 height: 1px;
 }
 #container .css-h63pka {
-width: 1152px;
+width: calc(100% - 128px);
 height: 68px;
 left: 64px;
 right: auto;
@@ -1563,7 +1614,7 @@ top: 342px;
 bottom: auto;
 }
 #container .css-mss1f6 {
-width: 1152px;
+width: 100%;
 height: 68px;
 }
 #container .css-oc6mlq {
@@ -1583,7 +1634,7 @@ color: rgba(255, 255, 255, 0.75);
 --letter-spacing: -2px;
 }
 #container .css-mg7yoi {
-max-width: 1500px;
+max-width: 100%;
 width: 100%;
 }
 #container .css-wzl28h {
@@ -1617,11 +1668,10 @@ color: #2F292A;
 --letter-spacing: -1.6px;
 }
 #container .css-nltibn {
-white-space: pre-wrap;
-line-height: 1.2000000762939453;
+line-height: 1.2;
 }
 #container .css-mtz32i {
-white-space: nowrap;
+ nowrap;
 font-family: "DM Sans:Regular", sans-serif;
 word-break: break-word;
 font-weight: 400;
@@ -1632,10 +1682,10 @@ line-height: 0;
 }
 #container .css-uo1sdi {
 font-size: 40px;
-line-height: 1.2000000762939453;
+line-height: 1.2;
 }
 #container .css-5asuez {
-max-width: 1500px;
+max-width: 100%;
 height: 831px;
 width: 100%;
 }
@@ -1654,7 +1704,7 @@ width: 100%;
 height: 831px;
 }
 #container .css-2zzrr7 {
-max-width: 1600px;
+max-width: 100%;
 min-width: 1px;
 min-height: 1px;
 height: 100%;
@@ -1710,7 +1760,7 @@ right: -0.00015031558757611606%;
 bottom: -0.0009016638472331751%;
 }
 #container .css-2g44p8 {
-white-space: nowrap;
+ nowrap;
 font-family: "DM Sans:Regular", sans-serif;
 word-break: break-word;
 font-weight: 400;
@@ -1727,14 +1777,14 @@ color: #99493D;
 --letter-spacing: -0.12px;
 }
 #container .css-u2yfu8 {
-width: 1200px;
+width: calc(100% - 80px);
 left: 40px;
 right: auto;
 top: 0;
 bottom: auto;
 }
 #container .css-5ico6d {
-width: 1200px;
+width: 100%;
 }
 #container .css-e8fnbp {
 width: 81.2093505859375px;
@@ -1745,4 +1795,59 @@ top: 0;
 left: 0;
 right: -0.00015031558757611606%;
 bottom: 0;
+}
+
+/* Scroll-triggered fade-in animations */
+.fade-in-on-scroll {
+opacity: 0;
+transform: translateY(30px);
+transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-on-scroll.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* Ensure footer section animates properly */
+.footer-section {
+opacity: 0 !important;
+transform: translateY(30px) !important;
+transition: opacity 0.8s ease-out, transform 0.8s ease-out !important;
+}
+
+.footer-section.visible {
+opacity: 1 !important;
+transform: translateY(0) !important;
+}
+
+/* Smooth scroll behavior */
+html {
+scroll-behavior: smooth;
+}
+
+/* Style for scroll links */
+.scroll-link {
+color: inherit;
+text-decoration: none;
+cursor: pointer;
+transition: opacity 0.2s ease;
+position: relative;
+z-index: 10;
+pointer-events: auto;
+display: inline-block;
+}
+
+.scroll-link:hover {
+opacity: 0.7;
+text-decoration: underline;
+}
+
+/* Ensure parent containers don't block clicks */
+.css-yujnmi {
+pointer-events: auto;
+}
+
+.css-yujnmi .scroll-link {
+pointer-events: auto;
 }
