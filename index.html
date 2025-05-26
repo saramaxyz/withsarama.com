@@ -93,6 +93,16 @@
                   }, index * 750); // 0.75s delay for each subsequent paragraph
                 });
               }
+
+              // Check if this is the parent section containing the delayed-fade element
+              if (entry.target.classList.contains('css-op4k87') && entry.target.classList.contains('css-5asuez')) {
+                const delayedElement = entry.target.querySelector('.delayed-fade');
+                if (delayedElement) {
+                  setTimeout(() => {
+                    delayedElement.classList.add('visible');
+                  }, 1000); // 1 second delay
+                }
+              }
             }, 100);
             // Stop observing once animated
             observer.unobserve(entry.target);
@@ -413,7 +423,7 @@
                     style="border-width: 1px; border-color: rgba(0, 0, 0, 0); border-style: solid; opacity: 1;"></div>
                   <div class="css-4sgc css-7js8wp css-j9f0op"></div>
                 </div>
-                <div class="css-bmg2lx css-5dba7r" style="opacity:1;transform:none">
+                <div class="css-bmg2lx css-5dba7r delayed-fade" style="transform:none">
                   <div class="css-trglf0 css-r0azwh"
                     style="border-top-left-radius:25px;border-top-right-radius:25px;border-bottom-right-radius:25px;border-bottom-left-radius:25px">
                     <div class="css-trglf0 css-r0azwh"

@@ -2125,3 +2125,13 @@ html {
 #our-story-section p.sequential-fade.is-visible {
     opacity: 1;
 }
+
+/* Add 1 second delay to "A quiet system for deeper care" section */
+.css-bmg2lx.css-5dba7r.delayed-fade {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+}
+
+.css-bmg2lx.css-5dba7r.delayed-fade.visible {
+    opacity: 1;
+}
