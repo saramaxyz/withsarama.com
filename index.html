@@ -55,6 +55,7 @@
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=585515677899472&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel Code -->
   
+
   <!-- Override any width constraints -->
   <script>
     // Force full width on page load and resize
@@ -89,10 +90,23 @@
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            console.log('Animating element:', entry.target.className);
+            const targetIdentifier = entry.target.id ? `#${entry.target.id}` : (entry.target.className && typeof entry.target.className === 'string' ? `.${entry.target.className.split(' ').join('.')}` : 'UnnamedElement');
+            console.log('Animating element:', targetIdentifier);
             // Add a small delay to ensure smooth animation
             setTimeout(() => {
               entry.target.classList.add('visible');
+
+              // Check if the animated element is our-story-section
+              if (entry.target.id === 'our-story-section') {
+                console.log('Starting sequential fade for #our-story-section paragraphs');
+                const paragraphs = entry.target.querySelectorAll('p.sequential-fade');
+                paragraphs.forEach((p, index) => {
+                  setTimeout(() => {
+                    p.classList.add('is-visible');
+                    console.log('Fading in paragraph ' + (index + 1) + ':', p.textContent.substring(0, 30).trim() + "...");
+                  }, index * 750); // 0.75s delay for each subsequent paragraph
+                });
+              }
             }, 100);
             // Stop observing once animated
             observer.unobserve(entry.target);
@@ -367,8 +381,7 @@
                                 <div class="textContents css-vkpzlc css-ig8i86 css-69bfm9" data-paragraph-spacing="0px"
                                   data-list-spacing="0px"
                                   style="color: rgb(255, 255, 255); font-size: 14px; font-weight: 400; font-variation-settings: &quot;opsz&quot; 14; letter-spacing: -0.28px; line-height: 0; opacity: 1;">
-                                  <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing">Apply for the private
-                                    beta</p>
+                                  <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing" style="width: 175px;">Apply for the private beta</p>
                                 </div>
                               </div>
                             </a></div>
@@ -399,25 +412,23 @@
                         <div class="css-916p2q css-7js8wp css-ti2agj">
                           <div class="textContents css-wc1msa css-59rdls css-2hbi4c css-9tyidi"
                             data-paragraph-spacing="0px" data-list-spacing="0px" style="opacity:1;transform:none">
-                            <p class="css-8zr56v css-nltibn css-e3ep6k  adjustLetterSpacing">Most dog tech tells you
-                              where your dog is. </p>
+                            <p class="css-8zr56v css-nltibn css-e3ep6k  adjustLetterSpacing sequential-fade">Most dog tech tells you where your dog is. </p>
                           </div>
                           <div class="textContents css-wc1msa css-59rdls css-2hbi4c css-9tyidi"
                             data-paragraph-spacing="0px" data-list-spacing="0px" style="opacity:1;transform:none">
-                            <p class="css-8zr56v css-nltibn css-e3ep6k  adjustLetterSpacing">Sarama helps you feel how
-                              they are. </p>
+                            <p class="css-8zr56v css-nltibn css-e3ep6k  adjustLetterSpacing sequential-fade">Sarama helps you feel how they are. </p>
                           </div>
                         </div>
                       </div>
                       <div class="textContents css-wc1msa css-mtz32i css-nyous1" data-paragraph-spacing="10px"
                         data-list-spacing="0px" style="opacity:1;transform:none">
-                        <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing">GPS can show you their
+                        <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing sequential-fade">GPS can show you their
                           location.<br>Trackers can count their steps.<br>But none of it tells you the part that matters
                           most:<br>What your dog is feeling—and why.</p>
                       </div>
                       <div class="textContents css-msv2x0 css-wc1msa css-f8rggk css-9tyidi" data-paragraph-spacing="0px"
                         data-list-spacing="0px" style="opacity:1;transform:none">
-                        <p class="css-4hzbpn"><span class="css-uo1sdi css-e3ep6k">Sarama exists for the moments numbers
+                        <p class="css-4hzbpn sequential-fade"><span class="css-uo1sdi css-e3ep6k">Sarama exists for the moments numbers
                           </span><span class="css-caa7se css-e3ep6k">can’t</span><span class="css-gu53ag css-e3ep6k">
                             explain</span><span class="css-uo1sdi css-e3ep6k  adjustLetterSpacing">.</span></p>
                       </div>
