@@ -264,16 +264,65 @@
       });
     }
 
+    // Dynamic logo switching based on background sections
+    function initLogoSwitching() {
+      const topLogo = document.querySelector('.css-e8fnbp img'); // Top navigation logo
+      const darkLogoSrc = './assets/image/4f75f5eee38961071c7e4314f2901bdc944c0133.svg';
+      const lightLogoSrc = './assets/image/9f2c86bf58607377f75e6b87b22f6680718e8c22.svg';
+      
+      if (!topLogo) return;
+      
+      // Define light background sections by their selectors or elements
+      const lightSections = [
+        document.querySelector('#our-story-section'), // Story section
+        document.querySelector('#contact-section'), // Contact section  
+        document.querySelector('.footer-section'), // Footer section        
+      ].filter(Boolean); // Remove any null elements
+      
+      function checkLogoVisibility() {
+        const logoRect = topLogo.getBoundingClientRect();
+        const logoCenter = logoRect.top + logoRect.height / 2;
+        
+        // Check if logo center intersects with any light background section
+        let isOverLightSection = false;
+        
+        for (const section of lightSections) {
+          const sectionRect = section.getBoundingClientRect();
+          if (logoCenter >= sectionRect.top && logoCenter <= sectionRect.bottom) {
+            isOverLightSection = true;
+            break;
+          }
+        }
+        
+        // Switch logo based on background
+        const currentSrc = topLogo.getAttribute('src');
+        const targetSrc = isOverLightSection ? lightLogoSrc : darkLogoSrc;
+        
+        if (currentSrc !== targetSrc) {
+          topLogo.setAttribute('src', targetSrc);
+        }
+      }
+      
+      // Check on scroll and resize
+      window.addEventListener('scroll', checkLogoVisibility);
+      window.addEventListener('resize', checkLogoVisibility);
+      
+      // Initial check
+      checkLogoVisibility();
+    }
+
     // Initialize scroll animations after DOM is loaded
     document.addEventListener('DOMContentLoaded', () => {
       initScrollAnimations();
       initSmoothScroll();
       setupContactClick();
+      initLogoSwitching();
     });
     window.addEventListener('load', () => {
       initScrollAnimations();
       initSmoothScroll();
       setupContactClick();
+      initLogoSwitching();
     });
   </script>
 </head>
