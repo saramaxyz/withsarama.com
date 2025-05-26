@@ -698,47 +698,39 @@
 /* Scroll-triggered fade-in animations */
 .fade-in-on-scroll {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition: opacity 0.8s ease-out;
 }
 
 .fade-in-on-scroll.visible {
     opacity: 1;
-    transform: translateY(0);
 }
 
 /* Smooth animation timing for individual elements */
 
 /* Specific animations for different section types */
 .fade-in-on-scroll.slide-up {
-    transform: translateY(50px);
+    opacity: 0;
 }
 
 .fade-in-on-scroll.slide-up.visible {
-    transform: translateY(0);
+    opacity: 1;
 }
 
 .fade-in-on-scroll.fade-only {
-    transform: none;
+    opacity: 0;
 }
 
 .fade-in-on-scroll.fade-only.visible {
-    transform: none;
+    opacity: 1;
 }
 
 /* Override any existing inline opacity/transform styles for animated elements */
 .fade-in-on-scroll {
     opacity: 0 !important;
-    transform: translateY(30px) !important;
-}
-
-.fade-in-on-scroll.slide-up {
-    transform: translateY(50px) !important;
 }
 
 .fade-in-on-scroll.visible {
     opacity: 1 !important;
-    transform: translateY(0) !important;
 }
 
 #container .css-xipszf {
@@ -2076,25 +2068,21 @@
 /* Scroll-triggered fade-in animations */
 .fade-in-on-scroll {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition: opacity 0.8s ease-out;
 }
 
 .fade-in-on-scroll.visible {
     opacity: 1;
-    transform: translateY(0);
 }
 
 /* Ensure footer section animates properly */
 .footer-section {
     opacity: 0 !important;
-    transform: translateY(30px) !important;
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out !important;
+    transition: opacity 0.8s ease-out !important;
 }
 
 .footer-section.visible {
     opacity: 1 !important;
-    transform: translateY(0) !important;
 }
 
 /* Smooth scroll behavior */
@@ -2131,11 +2119,9 @@ html {
 
 #our-story-section p.sequential-fade {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
 }
 
 #our-story-section p.sequential-fade.is-visible {
     opacity: 1;
-    transform: translateY(0);
 }
