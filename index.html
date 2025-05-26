@@ -14,21 +14,27 @@
   <link href="/assets/image/favicon.png" rel="shortcut icon" type="image/x-icon">
 
   <title id="title-dn40ff">A new language of care | withSarama.com</title>
-  
-  <meta id="meta-jgm8m5" name="description" content="Most dog tech tells you where your dog is. Sarama helps you feel how they are.">
-  <meta id="meta-og-image" property="og:image" content="https://withsarama.com/assets/image/0afbb9be839060c461bfdcb5bf1db14cf7a6fd43.jpeg">
+
+  <meta id="meta-jgm8m5" name="description"
+    content="Most dog tech tells you where your dog is. Sarama helps you feel how they are.">
+  <meta id="meta-og-image" property="og:image"
+    content="https://withsarama.com/assets/image/0afbb9be839060c461bfdcb5bf1db14cf7a6fd43.jpeg">
   <meta id="meta-og-title" property="og:title" content="A new language of care with Sarama">
-  <meta id="meta-og-description" property="og:description" content="Most dog tech tells you where your dog is. Sarama helps you feel how they are.">
+  <meta id="meta-og-description" property="og:description"
+    content="Most dog tech tells you where your dog is. Sarama helps you feel how they are.">
   <meta id="meta-og-type" property="og:type" content="website">
   <meta id="meta-og-url" property="og:url" content="https://withsarama.com">
-  <meta id="meta-og-image-alt" property="og:image:alt" content="Illustration of a dog and a human in a park, with a subtle gradient connecting them.">
+  <meta id="meta-og-image-alt" property="og:image:alt"
+    content="Illustration of a dog and a human in a park, with a subtle gradient connecting them.">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:domain" content="withsarama.com">
   <meta property="twitter:url" content="https://withsarama.com">
   <meta name="twitter:title" content="A new language of care with Sarama">
-  <meta name="twitter:description" content="Most dog tech tells you where your dog is. Sarama helps you feel how they are.">
-  <meta name="twitter:image" content="https://withsarama.com/assets/image/0afbb9be839060c461bfdcb5bf1db14cf7a6fd43.jpeg">
+  <meta name="twitter:description"
+    content="Most dog tech tells you where your dog is. Sarama helps you feel how they are.">
+  <meta name="twitter:image"
+    content="https://withsarama.com/assets/image/0afbb9be839060c461bfdcb5bf1db14cf7a6fd43.jpeg">
 
   <!-- Load CSS asynchronously to prevent render blocking -->
   <link rel="stylesheet" href="assets/styles/style.css">
@@ -54,30 +60,10 @@
   </script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=585515677899472&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel Code -->
-  
+
 
   <!-- Override any width constraints -->
   <script>
-    // Force full width on page load and resize
-    function forceFullWidth() {
-      // Also override any other constrained containers
-      const containers = document.querySelectorAll('.css-3gmj9o, .css-v4sv0p');
-      // containers.forEach(container => {
-      //   container.style.width = '100%';
-      //   container.style.maxWidth = '100%';
-      // });
-    }
-    
-    // Run on load
-    document.addEventListener('DOMContentLoaded', forceFullWidth);
-    window.addEventListener('load', forceFullWidth);
-    window.addEventListener('resize', forceFullWidth);
-    
-    // Also run with a slight delay to override any other scripts
-    setTimeout(forceFullWidth, 100);
-    setTimeout(forceFullWidth, 500);
-    setTimeout(forceFullWidth, 1000);
-
     // Scroll-triggered animations
     function initScrollAnimations() {
       // Create intersection observer with proper settings
@@ -91,19 +77,19 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const targetIdentifier = entry.target.id ? `#${entry.target.id}` : (entry.target.className && typeof entry.target.className === 'string' ? `.${entry.target.className.split(' ').join('.')}` : 'UnnamedElement');
-            console.log('Animating element:', targetIdentifier);
+
             // Add a small delay to ensure smooth animation
             setTimeout(() => {
               entry.target.classList.add('visible');
 
               // Check if the animated element is our-story-section
               if (entry.target.id === 'our-story-section') {
-                console.log('Starting sequential fade for #our-story-section paragraphs');
+
                 const paragraphs = entry.target.querySelectorAll('p.sequential-fade');
                 paragraphs.forEach((p, index) => {
                   setTimeout(() => {
                     p.classList.add('is-visible');
-                    console.log('Fading in paragraph ' + (index + 1) + ':', p.textContent.substring(0, 30).trim() + "...");
+
                   }, index * 750); // 0.75s delay for each subsequent paragraph
                 });
               }
@@ -116,14 +102,14 @@
 
       // Observe all elements that already have fade-in-on-scroll class
       document.querySelectorAll('.fade-in-on-scroll').forEach((el, index) => {
-        console.log('Observing element', index, ':', el.className);
+
         observer.observe(el);
       });
 
       // Special handling for footer section
       const footerSection = document.querySelector('.footer-section');
       if (footerSection) {
-        console.log('Found footer section, ensuring it\'s observed');
+
         // Force reset the footer to ensure it starts hidden
         footerSection.classList.remove('visible');
         observer.observe(footerSection);
@@ -132,50 +118,40 @@
 
     // Smooth scroll functionality for internal links
     function initSmoothScroll() {
-      console.log('Initializing smooth scroll...');
+
       const scrollLinks = document.querySelectorAll('.scroll-link');
-      console.log('Found scroll links:', scrollLinks.length);
-      
+
+
       scrollLinks.forEach((link, index) => {
-        console.log('Setting up link', index, ':', link);
-        link.addEventListener('click', function(e) {
-          console.log('🔗 SCROLL LINK CLICKED!');
-          console.log('Clicked element:', this);
-          console.log('Event:', e);
-          console.log('Link text:', this.textContent);
-          console.log('Link href:', this.getAttribute('href'));
-          
+        link.addEventListener('click', function (e) {
           e.preventDefault();
           e.stopPropagation();
-          
+
           const targetId = this.getAttribute('href').substring(1);
           const targetElement = document.getElementById(targetId);
-          console.log('Target ID:', targetId, 'Target element:', targetElement);
-          
+
           if (targetElement) {
             // Remove visible class to retrigger animation
             targetElement.classList.remove('visible');
-            console.log('✅ Removed visible class, scrolling to target...');
-            
+
             // Smooth scroll to target
             targetElement.scrollIntoView({
               behavior: 'smooth',
               block: 'center'
             });
-            
+
             // Retrigger animation after scroll
             setTimeout(() => {
               targetElement.classList.add('visible');
-              console.log('✨ Re-added visible class - animation should trigger now');
+
             }, 500);
           } else {
-            console.log('❌ Target element not found!');
+
           }
         });
-        
+
         // Also add mousedown event as backup
-        link.addEventListener('mousedown', function(e) {
-          console.log('Contact us mousedown detected');
+        link.addEventListener('mousedown', function (e) {
         });
       });
     }
@@ -185,108 +161,92 @@
       // Try multiple approaches to catch the click
       const contactLinks = document.querySelectorAll('a[href="#contact-section"], .scroll-link');
       const contactParents = document.querySelectorAll('.css-yujnmi');
-      
-      console.log('Setting up contact click handlers...');
-      console.log('Contact links found:', contactLinks.length);
-      console.log('Contact parents found:', contactParents.length);
-      
+
       // Add click handler to parent elements containing "Contact us" or "Our story"
       contactParents.forEach(parent => {
         if (parent.textContent.includes('Contact us')) {
-          console.log('Adding click to parent element:', parent);
+
           parent.style.cursor = 'pointer';
-          parent.addEventListener('click', function(e) {
-            console.log('🎯 PARENT CONTACT ELEMENT CLICKED!');
-            console.log('Clicked parent element:', this);
-            console.log('Parent element classes:', this.className);
+          parent.addEventListener('click', function (e) {
             const targetElement = document.getElementById('contact-section');
             if (targetElement) {
               e.preventDefault();
               targetElement.classList.remove('visible');
-              console.log('✅ Parent click: Scrolling to contact section...');
+
               targetElement.scrollIntoView({
                 behavior: 'smooth',
                 block: 'center'
               });
               setTimeout(() => {
                 targetElement.classList.add('visible');
-                console.log('✨ Parent click: Animation re-triggered');
+
               }, 500);
             }
           });
         }
-        
+
         if (parent.textContent.includes('Our story')) {
-          console.log('Adding click to Our story parent element:', parent);
+
           parent.style.cursor = 'pointer';
-          parent.addEventListener('click', function(e) {
-            console.log('📖 PARENT OUR STORY ELEMENT CLICKED!');
-            console.log('Clicked parent element:', this);
-            console.log('Parent element classes:', this.className);
+          parent.addEventListener('click', function (e) {
             const targetElement = document.getElementById('our-story-section');
             if (targetElement) {
               e.preventDefault();
               targetElement.classList.remove('visible');
-              console.log('✅ Parent click: Scrolling to our story section...');
+
               targetElement.scrollIntoView({
                 behavior: 'smooth',
                 block: 'center'
               });
               setTimeout(() => {
                 targetElement.classList.add('visible');
-                console.log('✨ Parent click: Our story animation re-triggered');
+
               }, 500);
             }
           });
         }
       });
-      
+
       // Also try to find and setup click on the specific contact and our story links
       const allParagraphs = document.querySelectorAll('p');
       allParagraphs.forEach(p => {
         if (p.textContent.includes('Contact us')) {
-          console.log('Found Contact us paragraph:', p);
+
           p.style.cursor = 'pointer';
-          p.addEventListener('click', function(e) {
-            console.log('📝 CONTACT US PARAGRAPH CLICKED!');
-            console.log('Clicked paragraph:', this);
-            console.log('Paragraph text:', this.textContent);
+          p.addEventListener('click', function (e) {
             const targetElement = document.getElementById('contact-section');
             if (targetElement) {
               e.preventDefault();
               targetElement.classList.remove('visible');
-              console.log('✅ Paragraph click: Scrolling to contact section...');
+
               targetElement.scrollIntoView({
                 behavior: 'smooth',
                 block: 'center'
               });
               setTimeout(() => {
                 targetElement.classList.add('visible');
-                console.log('✨ Paragraph click: Animation re-triggered');
+
               }, 500);
             }
           });
         }
-        
+
         if (p.textContent.includes('Our story')) {
-          console.log('Found Our story paragraph:', p);
+
           p.style.cursor = 'pointer';
-          p.addEventListener('click', function(e) {
-            console.log('📖 OUR STORY PARAGRAPH CLICKED!');
-            console.log('Clicked paragraph:', this);
-            console.log('Paragraph text:', this.textContent);
+          p.addEventListener('click', function (e) {
             const targetElement = document.getElementById('our-story-section');
             if (targetElement) {
               e.preventDefault();
               targetElement.classList.remove('visible');
-              console.log('✅ Paragraph click: Scrolling to our story section...');
+
               targetElement.scrollIntoView({
                 behavior: 'smooth',
                 block: 'center'
               });
               setTimeout(() => {
                 targetElement.classList.add('visible');
-                console.log('✨ Paragraph click: Our story animation re-triggered');
+
               }, 500);
             }
           });
@@ -310,19 +270,22 @@
 
 <body>
   <div id="container">
-    <div data-page-overflowx="auto"
-      data-height="3652.99951171875" class="css-ll733z css-50jkpj css-x0o3s8">
+    <div data-page-overflowx="auto" data-height="3652.99951171875" class="css-ll733z css-50jkpj css-x0o3s8">
       <div class="css-g0vp85 css-j9f0op">
         <div class="css-3gmj9o css-ndsgy9 css-v4sv0p">
-          <div class="css-op4k87 css-mxg463"><video autoplay loop muted playsinline class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x css-f0z3cc">
+          <div class="css-op4k87 css-mxg463"><video autoplay loop muted playsinline
+              class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x css-f0z3cc">
               <!-- Desktop version -->
-              <source media="(min-width: 1024px)" src="./assets/video/desktop_Sarama_Dalmatian_loop.mp4" type="video/mp4">
+              <source media="(min-width: 1024px)" src="./assets/video/desktop_Sarama_Dalmatian_loop.mp4"
+                type="video/mp4">
               <!-- Tablet version -->
-              <source media="(min-width: 768px) and (max-width: 1023px)" src="./assets/video/tablet_Sarama_Dalmatian_loop.mp4" type="video/mp4">
+              <source media="(min-width: 768px) and (max-width: 1023px)"
+                src="./assets/video/tablet_Sarama_Dalmatian_loop.mp4" type="video/mp4">
               <!-- Mobile version -->
               <source media="(max-width: 767px)" src="./assets/video/mobile_Sarama_Dalmatian_loop.mp4" type="video/mp4">
               <!-- Fallback image in case video doesn't load -->
-              <img alt="" class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x css-f0z3cc" src="./assets/image/webp/0afbb9be839060c461bfdcb5bf1db14cf7a6fd43.webp">
+              <img alt="" class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x css-f0z3cc"
+                src="./assets/image/webp/0afbb9be839060c461bfdcb5bf1db14cf7a6fd43.webp">
             </video>
             <div class="css-rt1aze css-j9f0op">
               <div class="css-bd4g2t css-rc74tc css-y02fvh">
@@ -381,7 +344,8 @@
                                 <div class="textContents css-vkpzlc css-ig8i86 css-69bfm9" data-paragraph-spacing="0px"
                                   data-list-spacing="0px"
                                   style="color: rgb(255, 255, 255); font-size: 14px; font-weight: 400; font-variation-settings: &quot;opsz&quot; 14; letter-spacing: -0.28px; line-height: 0; opacity: 1;">
-                                  <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing" style="width: 175px;">Apply for the private beta</p>
+                                  <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing"
+                                    style="width: 175px;">Apply for the private beta</p>
                                 </div>
                               </div>
                             </a></div>
@@ -412,25 +376,23 @@
                         <div class="css-916p2q css-7js8wp css-ti2agj">
                           <div class="textContents css-wc1msa css-59rdls css-2hbi4c css-9tyidi"
                             data-paragraph-spacing="0px" data-list-spacing="0px" style="opacity:1;transform:none">
-                            <p class="css-8zr56v css-nltibn css-e3ep6k  adjustLetterSpacing sequential-fade">Most dog tech tells you where your dog is. </p>
+                            <p class="css-8zr56v css-nltibn css-e3ep6k  adjustLetterSpacing sequential-fade">Most dog
+                              tech tells you where your dog is. </p>
                           </div>
                           <div class="textContents css-wc1msa css-59rdls css-2hbi4c css-9tyidi"
                             data-paragraph-spacing="0px" data-list-spacing="0px" style="opacity:1;transform:none">
-                            <p class="css-8zr56v css-nltibn css-e3ep6k  adjustLetterSpacing sequential-fade">Sarama helps you feel how they are. </p>
+                            <p class="css-8zr56v css-nltibn css-e3ep6k  adjustLetterSpacing sequential-fade">Sarama
+                              helps you feel how they are. </p>
                           </div>
                         </div>
                       </div>
                       <div class="textContents css-wc1msa css-mtz32i css-nyous1" data-paragraph-spacing="10px"
                         data-list-spacing="0px" style="opacity:1;transform:none">
-                        <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing sequential-fade">GPS can show you their
-                          location.<br>Trackers can count their steps.<br>But none of it tells you the part that matters
-                          most:<br>What your dog is feeling—and why.</p>
+                        <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing sequential-fade" style="margin-top: 10px; margin-bottom: 10px;">GPS can show you their location.<br>Trackers can count their steps.<br>But none of it tells you the part that matters most:<br>What your dog is feeling—and why.</p>
                       </div>
                       <div class="textContents css-msv2x0 css-wc1msa css-f8rggk css-9tyidi" data-paragraph-spacing="0px"
                         data-list-spacing="0px" style="opacity:1;transform:none">
-                        <p class="css-4hzbpn sequential-fade"><span class="css-uo1sdi css-e3ep6k">Sarama exists for the moments numbers
-                          </span><span class="css-caa7se css-e3ep6k">can’t</span><span class="css-gu53ag css-e3ep6k">
-                            explain</span><span class="css-uo1sdi css-e3ep6k  adjustLetterSpacing">.</span></p>
+                        <p class="css-4hzbpn sequential-fade"><span class="css-uo1sdi css-e3ep6k">Sarama exists for the moments numbers can’t explain.</span></p>
                       </div>
                     </div>
                   </div>
@@ -468,14 +430,11 @@
                           <div class="css-cxq6gs css-7js8wp css-v27th6">
                             <div class="textContents css-wc1msa css-59rdls css-2hbi4c css-9tyidi"
                               data-paragraph-spacing="0px" data-list-spacing="0px">
-                              <p class="css-8zr56v css-nltibn css-e3ep6k  adjustLetterSpacing">A quiet system for deeper
-                                care.</p>
+                              <p class="css-8zr56v css-nltibn css-e3ep6k  adjustLetterSpacing">A quiet system for deeper care.</p>
                             </div>
                             <div class="textContents css-wc1msa css-59rdls css-1yoex6 css-nyous1"
                               data-paragraph-spacing="10px" data-list-spacing="0px">
-                              <p class="css-8zr56v css-ydwfk1 css-e3ep6k  adjustLetterSpacing">Sarama listens where
-                                others track.<br>It turns the signals you can’t see—<br>tiny shifts in movement, voice,
-                                and breath—<br>into quiet, intuitive insights.</p>
+                              <p class="css-8zr56v css-ydwfk1 css-e3ep6k  adjustLetterSpacing">Sarama listens where others track.<br>It turns the signals you can’t see—<br>tiny shifts in movement, voice, and breath—<br>into quiet, intuitive insights.</p>
                             </div>
                           </div>
                         </div>
@@ -515,7 +474,8 @@
                             data-paragraph-spacing="10px" data-list-spacing="0px">
                             <p class="css-8zr56v css-ydwfk1 css-e3ep6k  adjustLetterSpacing">For those who feel called
                               to lead this listening revolution first.</p>
-                            <p class="css-8zr56v css-ydwfk1 css-e3ep6k  adjustLetterSpacing">Apply to join our private beta. 100 humans and their dogs. Selected with care.</p>
+                            <p class="css-8zr56v css-ydwfk1 css-e3ep6k  adjustLetterSpacing">Apply to join our private
+                              beta. 100 humans and their dogs. Selected with care.</p>
                           </div>
                           <div class="css-op4k87 css-rhsw0l css-pygw3b" style="opacity:1;transform:none">
                             <div class="css-688vqn css-j9f0op"><a href="https://form.typeform.com/to/ifTQerp4"
@@ -523,7 +483,8 @@
                                 <div class="css-7tbwgc css-7js8wp css-pygw3b">
                                   <div class="textContents css-vkpzlc css-qorwbp css-xipszf"
                                     data-paragraph-spacing="0px" data-list-spacing="0px">
-                                    <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing">Apply for the private beta</p>
+                                    <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing">Apply for the
+                                      private beta</p>
                                   </div>
                                 </div>
                               </a></div>
@@ -546,15 +507,18 @@
                       <div class="css-z6r2g3 css-7js8wp">
                         <div class="textContents css-wc1msa css-qddawj css-yujnmi" data-paragraph-spacing="0px"
                           data-list-spacing="0px">
-                          <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing"><a href="#our-story-section" class="scroll-link">Our story</a></p>
+                          <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing"><a href="#our-story-section"
+                              class="scroll-link">Our story</a></p>
                         </div>
                         <div class="textContents css-wc1msa css-qddawj css-yujnmi" data-paragraph-spacing="0px"
                           data-list-spacing="0px">
-                          <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing"><a href="#contact-section" class="scroll-link">Contact us</a></p>
+                          <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing"><a href="#contact-section"
+                              class="scroll-link">Contact us</a></p>
                         </div>
                         <div class="textContents css-wc1msa css-qddawj css-62rdwl" data-paragraph-spacing="0px"
                           data-list-spacing="0px">
-                          <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing"><a href="privacy-policy.html">Privacy policy</a></p>
+                          <p class="css-8zr56v css-evv0vy css-e3ep6k  adjustLetterSpacing"><a
+                              href="privacy-policy.html">Privacy policy</a></p>
                         </div>
                       </div>
                     </div>
