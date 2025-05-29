@@ -29,7 +29,7 @@ function initScrollAnimations() {
           }
 
           // Check if this is the parent section containing the delayed-fade element
-          if (entry.target.classList.contains('css-op4k87') && entry.target.classList.contains('css-5asuez')) {
+          if (entry.target.classList.contains('legacy--delayed-fade-section')) {
             const delayedElement = entry.target.querySelector('.delayed-fade');
             if (delayedElement) {
               setTimeout(() => {

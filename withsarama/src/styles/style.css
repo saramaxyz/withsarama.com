@@ -280,6 +280,18 @@
     unicode-range: U+0259, U+0300-03C0, U+2070-2073, U+2075-20AB, U+20AD-2121, U+2123-218F, U+21BC-2211, U+2213-2214, U+2216-F8FE, U+FB01-FB02;
 }
 
+.font-body {
+    font-family: "DM Sans:Regular", sans-serif;
+}
+
+.font-light-italic {
+    font-family: "Tid TRIAL:Light Italic", sans-serif;
+}
+
+.font-light {
+    font-family: "Tid TRIAL:Light", sans-serif;
+}
+
 #container .css-tzn6qh {
     display: block;
     position: absolute;
