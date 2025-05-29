@@ -14,8 +14,6 @@ devenv.local.nix
 # pre-commit
 .pre-commit-config.yaml
 
-# build output
-dist/
 # generated types
 .astro/
 
