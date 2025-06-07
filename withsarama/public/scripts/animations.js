@@ -29,7 +29,7 @@ function initScrollAnimations() {
           }
 
           // Check if this is the parent section containing the delayed-fade element
-          if (entry.target.classList.contains('css-op4k87') && entry.target.classList.contains('css-5asuez')) {
+          if (entry.target.classList.contains('legacy--delayed-fade-section')) {
             const delayedElement = entry.target.querySelector('.delayed-fade');
             if (delayedElement) {
               setTimeout(() => {
@@ -201,8 +201,8 @@ function setupContactClick() {
 // Dynamic logo switching based on background sections
 function initLogoSwitching() {
   const topLogo = document.querySelector('.css-e8fnbp img'); // Top navigation logo
-  const darkLogoSrc = './assets/image/4f75f5eee38961071c7e4314f2901bdc944c0133.svg';
-  const lightLogoSrc = './assets/image/9f2c86bf58607377f75e6b87b22f6680718e8c22.svg';
+  const darkLogoSrc = './image/4f75f5eee38961071c7e4314f2901bdc944c0133.svg';
+  const lightLogoSrc = './image/9f2c86bf58607377f75e6b87b22f6680718e8c22.svg';
   
   if (!topLogo) return;
   
